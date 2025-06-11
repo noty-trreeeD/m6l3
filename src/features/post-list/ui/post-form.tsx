@@ -6,7 +6,7 @@ export function PostForm() {
   const setFilter = postStore(selectSetFilter);
 
   const [error, submitAction, isPending] = useActionState(
-    async (previousState: unknown, formData: FormData) => {
+    async (_previousState: unknown, formData: FormData) => {
       const title = formData.get("title")?.toString();
       if (!title) {
         return "Title are required.";
